@@ -16,3 +16,22 @@ function addTodo() {
  
   document.dispatchEvent(new Event(RENDER_EVENT));
 }
+function generateId() {
+  return +new Date();
+}
+ 
+function generateTodoObject(id, task, timestamp, isCompleted) {
+  return {
+    id,
+    task,
+    timestamp,
+    isCompleted
+  }
+}
+
+const todos = [];
+const RENDER_EVENT = 'render-todo';
+
+document.addEventListener(RENDER_EVENT, function () {
+  console.log(todos);
+});
